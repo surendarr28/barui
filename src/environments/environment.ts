@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_BASE: "https://orederapp.herokuapp.com/",
+  GET_TABLE: "v1/api/tables",
+  SEARCH_ITEM: "v1/api/search",
+  ADD_ITEM: "v1/api/additem",
+  UPDATE_ITEM: "v1/api/updateitem",
+  UPDATE_ORDER: "v1/api/updateorder",
+  KITCHE_ORDER: "v1/api/orders"
 };
 
 /*

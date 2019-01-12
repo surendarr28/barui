@@ -1,0 +1,10 @@
+<div class="list_continer">
+  <a class="table_ui" *ngFor="let item of tables" [routerLink]="['/order', item.id, item.title, item.capacity]">
+    <span class="table_title"><i class="fas fa-glass-martini"></i>  {{item.title}}</span>  <span class="table_icon"><i class="fas fa-chair"></i> <span class="table_capa">{{item.capacity}}</span> </span>
+  </a>
+
+  <div class="add_item"  *ngIf="tables.length == 0 && !isloading">
+    <i class="far fa-grin-tongue"></i>
+    <div class="add_item_btn">I am taking table for you please wait...</div>
+  </div>
+</div>

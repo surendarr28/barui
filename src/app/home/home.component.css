@@ -1,0 +1,41 @@
+.table_ui {
+    color:#8b008b;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #8b008b;
+    padding: 10px 20px;
+    margin: 10px;
+    display: block;
+    background-color: #f2e4f2;
+    font-size: 20px;
+}
+
+.table_icon {
+    float: right;
+}
+.table_capa {
+    background-color: #8b008b;
+    color: #fff;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+
+.add_item {
+    display: block;
+    font-size: 8em;
+    text-align: center;
+    color: #8d2f8b;
+    cursor: pointer;
+
+}
+
+.add_item_btn {
+    font-size: 0.3em;
+}

@@ -1,0 +1,18 @@
+.header_nav {
+    background-color: #8b008b;
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 25px;
+}
+.content_root {
+    padding: 10px;
+}
+
+.back_btn {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.header_title {
+    cursor:  none;
+}

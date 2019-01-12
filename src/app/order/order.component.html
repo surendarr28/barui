@@ -1,0 +1,46 @@
+<div class="table_ui">
+  <span class="table_search" (click)="gotSearch(orderId)"><i class="fas fa-search"></i></span>
+  <span class="table_title">{{tableName}}</span>
+  <span class="table_icon">
+    <span class="table_capa">{{tableCapacity}}</span> </span>
+</div>
+<div class="action_bar">
+  <span class="close_order_btn" (click)="closeOrder()"><i class="fas fa-window-close"></i> close order</span>
+  <span class="refresh_btn" (click)="getOrder()"><i class="fas fa-sync-alt" [class.fa-spin]="isloading"></i>refresh</span>
+</div>
+
+<div class="item_list">
+  <div class="item" *ngFor="let item of orderItem">
+    <div class="table_detail">
+      <div class="drinks_name">{{item.name}}</div> <span class="status_light" [class.kitchen]="item.status == 0"
+        [class.out_kitchen]="item.status == 1" [class.in_table]="item.status == 2" [class.in_bill]="item.status == 3"
+        (click)="changeItemStatus(item)"><i class="fas fa-lightbulb"></i>
+        <span class="tag kitchen" *ngIf="item.status == 0">Kitchen</span>
+        <span class="tag out_kitchen" *ngIf="item.status == 1">OUT Kitchen</span>
+        <span class="tag in_table" *ngIf="item.status == 2">TABLE</span>
+      </span>
+    </div>
+    <div class="item_qua">
+      <span class="dec_qua" (click)="decrease(item)"><i class="fas fa-minus-circle"></i></span>
+      <input type="text" class="quantity_input" [(ngModel)]="item.quantity" />
+      <span class="inc_qua" (click)="increase(item)"><i class="fas fa-plus-circle"></i></span>
+    </div>
+    <!-- <div class="per_price_block">
+      <span>₹ {{item.price}}</span>
+    </div> -->
+    <div class="price_block">
+      <span>₹ {{item.price*item.quantity | number}}</span>
+    </div>
+
+  </div>
+
+  <div class="add_item" (click)="gotSearch(orderId)" *ngIf="orderItem.length == 0 && !isloading">
+    <i class="far fa-grin-tongue"></i>
+    <div class="add_item_btn">Tap me to add item</div>
+  </div>
+
+  <div class="add_item" *ngIf="isloading">
+    <i class="fas fa-grin-beam"></i>
+    <div class="add_item_btn">I am taking order for you please wait...</div>
+  </div>
+</div>

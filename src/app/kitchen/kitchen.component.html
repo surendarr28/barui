@@ -1,0 +1,13 @@
+<div class="action_panel">
+
+<span class="refresh_btn" (click)="getOrder()"><i class="fas fa-sync-alt" [class.fa-spin]="isLoading"></i>refresh</span>
+</div>
+<div class="order_block">
+  <div class="in_order" *ngFor="let item of kitchenOrder | keys">
+    <label class="order_title" (click)="changeItemStatus(item)">{{item.value[0].title}} <span class="logo_table"><i
+          class="fab fa-angellist"></i></span> move me</label>
+    <div class="order_item" *ngFor="let order of item.value">
+      QTY <span class="quantity">{{order.quantity}}</span> <span class="item_text"> {{order.name}} </span>
+    </div>
+  </div>
+</div>

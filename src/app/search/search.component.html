@@ -1,0 +1,32 @@
+<div class="search_input">
+  <input class="search_input_text" (keyup)="search($event)" type="text" />
+  <div class="search_btn">
+    <i class="fas fa-search"></i>
+  </div>
+</div>
+
+<div class="item_list">
+  <div class="item" *ngFor="let item of searchResult">
+    <div class="table_detail" data-toggle="modal" data-target="#addItemModal" (click)="selectedItem(item)">
+      <div class="drinks_name">{{item.name}}</div> <span class="status_light"><i class="fas fa-lightbulb"></i></span>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{selectedValue.name}}</h5>
+      </div>
+      <div class="modal-body">
+        <div class="add_panel">
+          <input type="text" class="add_input" autofocus [(ngModel)]="quantity" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="addQuantity()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
